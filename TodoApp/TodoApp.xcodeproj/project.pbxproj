@@ -21,6 +21,7 @@
 		D7AD896B23C34A8F0043C37D /* TaskManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7AD896A23C34A8F0043C37D /* TaskManagerTests.swift */; };
 		D7AD896E23C34B450043C37D /* TaskManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7AD896D23C34B450043C37D /* TaskManager.swift */; };
 		D7AD897123C3CD5D0043C37D /* TaskListViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7AD897023C3CD5C0043C37D /* TaskListViewControllerTests.swift */; };
+		D7AD897323C3ED520043C37D /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7AD897223C3ED520043C37D /* DataProvider.swift */; };
 		D7D9127523C338F30051F59C /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D9127423C338F30051F59C /* Location.swift */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +63,7 @@
 		D7AD896A23C34A8F0043C37D /* TaskManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskManagerTests.swift; sourceTree = "<group>"; };
 		D7AD896D23C34B450043C37D /* TaskManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskManager.swift; sourceTree = "<group>"; };
 		D7AD897023C3CD5C0043C37D /* TaskListViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewControllerTests.swift; sourceTree = "<group>"; };
+		D7AD897223C3ED520043C37D /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
 		D7D9127423C338F30051F59C /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -163,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				D70661FF23C2737F0059A153 /* TaskListViewController.swift */,
+				D7AD897223C3ED520043C37D /* DataProvider.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -347,6 +350,7 @@
 				D7AD896E23C34B450043C37D /* TaskManager.swift in Sources */,
 				D706623323C27B2F0059A153 /* Task.swift in Sources */,
 				D706620023C2737F0059A153 /* TaskListViewController.swift in Sources */,
+				D7AD897323C3ED520043C37D /* DataProvider.swift in Sources */,
 				D7D9127523C338F30051F59C /* Location.swift in Sources */,
 				D70661FC23C2737E0059A153 /* AppDelegate.swift in Sources */,
 				D70661FE23C2737F0059A153 /* SceneDelegate.swift in Sources */,
