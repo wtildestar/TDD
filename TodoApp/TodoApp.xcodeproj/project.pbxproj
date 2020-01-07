@@ -22,6 +22,7 @@
 		D7AD896E23C34B450043C37D /* TaskManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7AD896D23C34B450043C37D /* TaskManager.swift */; };
 		D7AD897123C3CD5D0043C37D /* TaskListViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7AD897023C3CD5C0043C37D /* TaskListViewControllerTests.swift */; };
 		D7AD897323C3ED520043C37D /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7AD897223C3ED520043C37D /* DataProvider.swift */; };
+		D7AD897523C4787A0043C37D /* DataProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7AD897423C4787A0043C37D /* DataProviderTests.swift */; };
 		D7D9127523C338F30051F59C /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D9127423C338F30051F59C /* Location.swift */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +65,7 @@
 		D7AD896D23C34B450043C37D /* TaskManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskManager.swift; sourceTree = "<group>"; };
 		D7AD897023C3CD5C0043C37D /* TaskListViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewControllerTests.swift; sourceTree = "<group>"; };
 		D7AD897223C3ED520043C37D /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
+		D7AD897423C4787A0043C37D /* DataProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProviderTests.swift; sourceTree = "<group>"; };
 		D7D9127423C338F30051F59C /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -212,6 +214,7 @@
 			isa = PBXGroup;
 			children = (
 				D7AD897023C3CD5C0043C37D /* TaskListViewControllerTests.swift */,
+				D7AD897423C4787A0043C37D /* DataProviderTests.swift */,
 			);
 			path = Contoller;
 			sourceTree = "<group>";
@@ -363,6 +366,7 @@
 			files = (
 				D706623023C279220059A153 /* TaskTests.swift in Sources */,
 				D7AD896823C33B090043C37D /* LocationTests.swift in Sources */,
+				D7AD897523C4787A0043C37D /* DataProviderTests.swift in Sources */,
 				D7AD896B23C34A8F0043C37D /* TaskManagerTests.swift in Sources */,
 				D7AD897123C3CD5D0043C37D /* TaskListViewControllerTests.swift in Sources */,
 				D706621323C273800059A153 /* TodoAppTests.swift in Sources */,
