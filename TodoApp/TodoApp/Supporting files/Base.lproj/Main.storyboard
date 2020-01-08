@@ -25,7 +25,23 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wKc-XW-xwL" id="5FB-T0-vh1">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k3w-aa-ZH4">
+                                                    <rect key="frame" x="20" y="11.5" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="k3w-aa-ZH4" secondAttribute="trailing" constant="352" id="BjG-kS-l4b"/>
+                                                <constraint firstItem="k3w-aa-ZH4" firstAttribute="centerY" secondItem="5FB-T0-vh1" secondAttribute="centerY" id="EX1-7V-cLR"/>
+                                                <constraint firstItem="k3w-aa-ZH4" firstAttribute="leading" secondItem="5FB-T0-vh1" secondAttribute="leading" constant="20" id="cmy-5D-qpW"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="titleLabel" destination="k3w-aa-ZH4" id="wWo-eb-p4C"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
