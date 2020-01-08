@@ -29,6 +29,7 @@ class DataProviderTests: XCTestCase {
         // присваиваю в tableView - tableView с storyboard
         tableView = controller.tableView
         tableView.dataSource = sut
+        tableView.delegate = sut
     }
 
     override func tearDown() {
@@ -118,6 +119,17 @@ class DataProviderTests: XCTestCase {
         let cell = mockTableView.cellForRow(at: IndexPath(row: 0, section: 1)) as! MockTaskCell
         
         XCTAssertEqual(cell.task, task)
+    }
+    
+    // переименовываю кнопку delete по умолч в кнопку done
+    func testDeleteButtonTitleSectionZeroShowsDone() {
+        let buttonTitle = tableView.delegate?.tableView?(tableView, titleForDeleteConfirmationButtonForRowAt: IndexPath(row: 0, section: 0))
+        XCTAssertEqual(buttonTitle, "Done")
+    }
+    
+    func testDeleteButtonTitleSectionOneShowsDone() {
+        let buttonTitle = tableView.delegate?.tableView?(tableView, titleForDeleteConfirmationButtonForRowAt: IndexPath(row: 0, section: 1))
+        XCTAssertEqual(buttonTitle, "Undone")
     }
 }
 
