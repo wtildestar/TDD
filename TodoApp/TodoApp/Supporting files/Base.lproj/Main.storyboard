@@ -32,14 +32,35 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CMw-SP-o86">
+                                                    <rect key="frame" x="186" y="12" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Ky-Nv-QTz">
+                                                    <rect key="frame" x="352" y="12" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="k3w-aa-ZH4" secondAttribute="trailing" constant="352" id="BjG-kS-l4b"/>
                                                 <constraint firstItem="k3w-aa-ZH4" firstAttribute="centerY" secondItem="5FB-T0-vh1" secondAttribute="centerY" id="EX1-7V-cLR"/>
+                                                <constraint firstItem="CMw-SP-o86" firstAttribute="top" secondItem="5FB-T0-vh1" secondAttribute="top" constant="12" id="H6y-w7-JQW"/>
+                                                <constraint firstAttribute="trailing" secondItem="8Ky-Nv-QTz" secondAttribute="trailing" constant="20" id="IK5-gV-hcX"/>
+                                                <constraint firstAttribute="bottom" secondItem="CMw-SP-o86" secondAttribute="bottom" constant="10.5" id="Mc2-uR-5zo"/>
+                                                <constraint firstItem="CMw-SP-o86" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="k3w-aa-ZH4" secondAttribute="trailing" constant="124" id="Rgb-FP-7Sv"/>
+                                                <constraint firstItem="8Ky-Nv-QTz" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="CMw-SP-o86" secondAttribute="trailing" constant="124" id="afb-oI-Pgg"/>
+                                                <constraint firstItem="8Ky-Nv-QTz" firstAttribute="top" secondItem="5FB-T0-vh1" secondAttribute="top" constant="12" id="c0u-RI-rWt"/>
                                                 <constraint firstItem="k3w-aa-ZH4" firstAttribute="leading" secondItem="5FB-T0-vh1" secondAttribute="leading" constant="20" id="cmy-5D-qpW"/>
+                                                <constraint firstAttribute="bottom" secondItem="8Ky-Nv-QTz" secondAttribute="bottom" constant="10.5" id="k8m-cY-yhe"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="dateLabel" destination="8Ky-Nv-QTz" id="Eaj-kE-2Rp"/>
+                                            <outlet property="locationLabel" destination="CMw-SP-o86" id="Vcm-K0-icG"/>
                                             <outlet property="titleLabel" destination="k3w-aa-ZH4" id="wWo-eb-p4C"/>
                                         </connections>
                                     </tableViewCell>
