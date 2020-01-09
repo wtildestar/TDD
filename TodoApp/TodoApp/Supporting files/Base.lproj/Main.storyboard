@@ -156,5 +156,86 @@
             </objects>
             <point key="canvasLocation" x="969.56521739130437" y="107.8125"/>
         </scene>
+        <!--New Task View Controller-->
+        <scene sceneID="HfI-VV-18v">
+            <objects>
+                <viewController storyboardIdentifier="NewTaskViewController" id="Bpz-tQ-vNb" customClass="NewTaskViewController" customModule="TodoApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WHP-5x-drg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZvK-9t-5h2">
+                                <rect key="frame" x="20" y="188" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Q63-Oc-krZ">
+                                <rect key="frame" x="20" y="258" width="374" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tkn-wI-JJ1">
+                                <rect key="frame" x="20" y="332" width="374" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dMr-vC-tqF">
+                                <rect key="frame" x="20" y="398" width="374" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7y0-Vm-gna">
+                                <rect key="frame" x="20" y="464" width="374" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EA9-OB-7UF">
+                                <rect key="frame" x="229" y="726" width="120" height="47"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="47" id="7Nj-SV-8so"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="ibj-yK-ySz"/>
+                                </constraints>
+                                <state key="normal" title="Cancel"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c0S-ly-F1r">
+                                <rect key="frame" x="65" y="726" width="120" height="47"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="47" id="OFA-gJ-SHT"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="Rhf-7h-Psh"/>
+                                </constraints>
+                                <state key="normal" title="Save"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="c0S-ly-F1r" firstAttribute="leading" secondItem="ZJ5-F0-XRx" secondAttribute="leading" constant="65" id="4OA-Ik-9vM"/>
+                            <constraint firstItem="ZJ5-F0-XRx" firstAttribute="bottom" secondItem="EA9-OB-7UF" secondAttribute="bottom" constant="89" id="Mae-M2-Mtb"/>
+                            <constraint firstItem="ZvK-9t-5h2" firstAttribute="top" secondItem="ZJ5-F0-XRx" secondAttribute="top" constant="144" id="ghT-Ax-32F"/>
+                            <constraint firstItem="ZvK-9t-5h2" firstAttribute="leading" secondItem="ZJ5-F0-XRx" secondAttribute="leading" constant="20" id="gvu-pA-1nQ"/>
+                            <constraint firstItem="ZJ5-F0-XRx" firstAttribute="bottom" secondItem="c0S-ly-F1r" secondAttribute="bottom" constant="89" id="h7J-rn-D15"/>
+                            <constraint firstItem="EA9-OB-7UF" firstAttribute="leading" secondItem="c0S-ly-F1r" secondAttribute="trailing" constant="44" id="jda-nU-5cq"/>
+                            <constraint firstItem="ZJ5-F0-XRx" firstAttribute="trailing" secondItem="EA9-OB-7UF" secondAttribute="trailing" constant="65" id="klx-qH-PPn"/>
+                            <constraint firstItem="ZJ5-F0-XRx" firstAttribute="trailing" secondItem="ZvK-9t-5h2" secondAttribute="trailing" constant="20" id="sNv-K7-C0y"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ZJ5-F0-XRx"/>
+                    </view>
+                    <connections>
+                        <outlet property="addressTextField" destination="dMr-vC-tqF" id="YmI-gt-Cl5"/>
+                        <outlet property="cancelButton" destination="EA9-OB-7UF" id="ahM-8a-rA8"/>
+                        <outlet property="dateTextField" destination="tkn-wI-JJ1" id="lsD-xD-7j1"/>
+                        <outlet property="descriptionTextField" destination="7y0-Vm-gna" id="wPM-Y9-Qg8"/>
+                        <outlet property="locationTextField" destination="Q63-Oc-krZ" id="41T-Vf-5V1"/>
+                        <outlet property="saveButton" destination="c0S-ly-F1r" id="fbV-dS-NEP"/>
+                        <outlet property="titleTextField" destination="ZvK-9t-5h2" id="w3S-KL-Ydy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8dg-g9-297" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1808.6956521739132" y="107.8125"/>
+        </scene>
     </scenes>
 </document>
