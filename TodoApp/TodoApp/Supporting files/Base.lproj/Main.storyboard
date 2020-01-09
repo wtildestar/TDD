@@ -208,6 +208,9 @@
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="Rhf-7h-Psh"/>
                                 </constraints>
                                 <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="save" destination="Bpz-tQ-vNb" eventType="touchUpInside" id="2D6-mJ-ydO"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
