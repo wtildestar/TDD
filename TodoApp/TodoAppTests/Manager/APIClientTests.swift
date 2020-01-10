@@ -10,9 +10,13 @@ import XCTest
 @testable import TodoApp
 
 class APIClientTests: XCTestCase {
-
+    
+    let mockURLSession = MockURLSession()
+    let sut = APIClient()
+    
+    
     override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        sut.urlSession = mockURLSession
     }
 
     override func tearDown() {
@@ -20,28 +24,33 @@ class APIClientTests: XCTestCase {
     }
     
     func userLogin() {
-        let mockURLSession = MockURLSession()
-        let sut = APIClient()
-        sut.urlSession = mockURLSession
-        
         let completionHandler = {(token: String?, error: Error?) in }
         sut.login(withName: "name", password: "qwerty", completionHandler: completionHandler)
-        
-        //  могу ли вытащить урл с mockURLSession
-        
     }
     
     // проверка когда пользователь логинится сервер использует правильный host
     func testLoginUsesCorrectHost() {
         userLogin()
-        XCTAssertEqual(urlComponents?.host, "todoapp.com")
+        XCTAssertEqual(mockURLSession.urlComponents?.host, "todoapp.com")
     }
     
     func testLoginUsesCorrectPath() {
         userLogin()
-        XCTAssertEqual(urlComponents?.path, "/login")
+        XCTAssertEqual(mockURLSession.urlComponents?.path, "/login")
     }
 
+    func testLoginUsesExpectedQueryParameters() {
+        userLogin()
+        guard let queryItems = mockURLSession.urlComponents?.queryItems else {
+            XCTFail()
+            return
+        }
+        let urlQueryItemName = URLQueryItem(name: "name", value: "name")
+        let urlQueryItemPassword = URLQueryItem(name: "password", value: "qwerty")
+        
+        XCTAssertTrue(queryItems.contains(urlQueryItemName))
+        XCTAssertTrue(queryItems.contains(urlQueryItemPassword))
+    }
 }
 
 extension APIClientTests {
