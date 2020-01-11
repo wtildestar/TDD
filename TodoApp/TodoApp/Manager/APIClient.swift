@@ -8,6 +8,11 @@
 
 import Foundation
 
+enum NetworkError: Error {
+    case emptyData
+    case emptyServer
+}
+
 protocol URLSessionProtocol {
     func dataTask(with url: URL, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTask
 }
@@ -33,11 +38,21 @@ class APIClient {
         
         urlSession.dataTask(with: url) { (data, resonse, error) in
             
-            guard let data = data else { fatalError() }
-            let dictionary = try! JSONSerialization.jsonObject(with: data, options: []) as! [String : String]
+            do {
+                guard let data = data else {
+                    completionHandler(nil, NetworkError.emptyData)
+                    return
+                }
+                
+                let dictionary = try JSONSerialization.jsonObject(with: data, options: []) as! [String : String]
+                
+                let token = dictionary["token"]
+                completionHandler(token, nil)
+            } catch {
+                completionHandler(nil, error)
+            }
             
-            let token = dictionary["token"]
-            completionHandler(token, nil)
+            
             
         }.resume()
     }

@@ -151,7 +151,7 @@
 				D7AD897823C5FCFD0043C37D /* View */,
 				D7AD896F23C3CD320043C37D /* Contoller */,
 				D7AD896923C34A810043C37D /* Manager */,
-				D706621223C273800059A153 /* TodoAppTests.swift */,
+				D7AD89C623C9D6F50043C37D /* Supporting files */,
 				D706621423C273800059A153 /* Info.plist */,
 				D706623123C279310059A153 /* Model */,
 			);
@@ -261,6 +261,14 @@
 				D7AD89C423C8B91F0043C37D /* String+extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D7AD89C623C9D6F50043C37D /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				D706621223C273800059A153 /* TodoAppTests.swift */,
+			);
+			path = "Supporting files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
