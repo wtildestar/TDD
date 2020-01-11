@@ -11,7 +11,7 @@ import UIKit
 class TaskListViewController: UIViewController {
 
     @IBOutlet var dataProvider: DataProvider!
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet var tableView: UITableView!
     
     @IBAction func addNewTask(_ sender: UIBarButtonItem) {
         if let viewController = storyboard?.instantiateViewController(withIdentifier: String(describing: NewTaskViewController.self)) as? NewTaskViewController {
@@ -26,5 +26,9 @@ class TaskListViewController: UIViewController {
         dataProvider.taskManager = taskManager
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
 }
 

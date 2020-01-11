@@ -14,6 +14,7 @@ class TaskListViewControllerTests: XCTestCase {
     var sut: TaskListViewController!
     
     override func setUp() {
+        super.setUp()
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(identifier: String(describing: TaskListViewController.self))
         sut = vc as? TaskListViewController
@@ -83,5 +84,25 @@ class TaskListViewControllerTests: XCTestCase {
         let newTaskViewController = presentingNewTaskViewController()
         // делаю проверку по ссылочному равенству
         XCTAssertTrue(newTaskViewController.taskManager === sut.dataProvider.taskManager)
+    }
+    
+    func testWhenViewAppearedTableViewReloaded() {
+        let mockTableView = MockTableView()
+        sut.tableView = mockTableView
+        // viewWillAppear
+        sut.beginAppearanceTransition(true, animated: true)
+        sut.endAppearanceTransition()
+        
+        XCTAssertTrue((sut.tableView as! MockTableView).isReloaded)
+        
+    }
+}
+
+extension TaskListViewControllerTests {
+    class MockTableView: UITableView {
+        var isReloaded = false
+        override func reloadData() {
+            isReloaded = true
+        }
     }
 }
