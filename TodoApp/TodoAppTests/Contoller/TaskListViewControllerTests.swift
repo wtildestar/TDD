@@ -55,29 +55,33 @@ class TaskListViewControllerTests: XCTestCase {
         XCTAssertEqual(target as? TaskListViewController, sut)
     }
     
-    func testAddNewTaskPresentsNewTaskViewController() {
-        // проверка на доп вьюконтроллеры
-        XCTAssertNil(sut.presentedViewController)
-        
+    func presentingNewTaskViewController() -> NewTaskViewController {
         // если добраться до кнопки не получилось и экшена у кнопки нет то фейл
         guard
             let newTaskButton = sut.navigationItem.rightBarButtonItem,
             let action = newTaskButton.action else {
                 XCTFail()
-                return
+                return NewTaskViewController()
         }
-        
         // делаю sut в качестве root viewcontroller'a window
         UIApplication.shared.keyWindow?.rootViewController = sut
         
         // если есть кнопка с экшеном выполняем экшен
         sut.performSelector(onMainThread: action, with: newTaskButton, waitUntilDone: true)
-        // проверяю наличие контроллера
-        XCTAssertNotNil(sut.presentedViewController)
-        XCTAssertTrue(sut.presentedViewController is NewTaskViewController)
         
         let newTaskViewController = sut.presentedViewController as! NewTaskViewController
+        return newTaskViewController
+    }
+    
+    func testAddNewTaskPresentsNewTaskViewController() {
+        let newTaskViewController = presentingNewTaskViewController()
         // делаю проверку на аутлет
         XCTAssertNotNil(newTaskViewController.titleTextField)
+    }
+    
+    func testSharesSameTaskManagerWithNewTaskVC() {
+        let newTaskViewController = presentingNewTaskViewController()
+        // делаю проверку по ссылочному равенству
+        XCTAssertTrue(newTaskViewController.taskManager === sut.dataProvider.taskManager)
     }
 }
