@@ -25,6 +25,18 @@ extension DataProvider: UITableViewDelegate {
         case .done: return "Undone"
         }
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        guard let section = Section(rawValue: indexPath.section) else { fatalError() }
+        switch section {
+        case .todo:
+            let task = taskManager?.task(at: indexPath.row)
+            // посылаю уведомление
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "DidSelectRow notification"), object: self, userInfo: ["task" : task])
+        case .done: break
+        }
+    }
 }
 
 extension DataProvider: UITableViewDataSource {
