@@ -7,8 +7,13 @@
 //
 
 import Foundation
+import UIKit
 
 class TaskManager {
+    
+    private var tasks: [Task] = []
+    private var doneTasks: [Task] = []
+    
     var tasksCount: Int {
         return tasks.count
     }
@@ -16,8 +21,57 @@ class TaskManager {
         return doneTasks.count
     }
     
-    private var tasks: [Task] = []
-    private var doneTasks: [Task] = []
+    var tasksURL: URL {
+        // где хрянятся все файлы
+        let fileURLs = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        guard let documentURL = fileURLs.first else {
+            fatalError()
+        }
+        
+        return documentURL.appendingPathComponent("tasks.plist")
+    }
+    
+    init() {
+        // регистрирую себя в качестве наблюдателя в инициализаторе
+        NotificationCenter.default.addObserver(self, selector: #selector(save), name: UIApplication.willResignActiveNotification, object: nil)
+        
+        // получаю данные
+        if let data = try? Data(contentsOf: tasksURL) {
+            // получаю словари который хранятся в данном файле
+            let dictionaries = try? PropertyListSerialization.propertyList(from: data,
+                                                                           options: [],
+                                                                        format: nil) as! [[String : Any]] // привожу к массиву словарей
+            // использую словари для создания тасков
+            for dict in dictionaries! {
+                if let task = Task(dict: dict) {
+                    tasks.append(task)
+                }
+            }
+        }
+    }
+    
+    deinit {
+        save()
+    }
+    
+    @objc
+    func save() {
+        // все таски которые есть превратить в словари
+        let taskDictionaries = self.tasks.map { $0.dict }
+        // проверка на наличие элементов
+        guard taskDictionaries.count > 0 else {
+            // если задач нет удаляю все что хранится в файле
+            try? FileManager.default.removeItem(at: tasksURL)
+            return
+        }
+        
+        // получаю taskDictionaries в формате xml
+        let plistData = try? PropertyListSerialization.data(fromPropertyList: taskDictionaries,
+                                                            format: .xml,
+                                                            options: PropertyListSerialization.WriteOptions(0))
+        // после получения пытаюсь сохранить
+        try? plistData?.write(to: tasksURL, options: .atomic)
+    }
     
     func add(task: Task) {
         if !tasks.contains(task) {
