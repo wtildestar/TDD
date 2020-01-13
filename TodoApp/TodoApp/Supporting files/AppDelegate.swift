@@ -16,12 +16,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         #if targetEnvironment(simulator)
-        if let documentPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
-            print("Task File Directory: \(documentPath)")
+        if CommandLine.arguments.contains("--UITesting") {
+            resetState()
         }
         #endif
         
         return true
+    }
+    
+    private func resetState() {
+        guard
+            let documentPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first,
+            let url = URL(string: "\(documentPath)tasks.plist") else { return }
+        let fileManager = FileManager.default
+        try? fileManager.removeItem(at: url)
     }
 
     // MARK: UISceneSession Lifecycle
