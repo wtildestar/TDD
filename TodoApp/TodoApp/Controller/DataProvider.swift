@@ -65,7 +65,7 @@ extension DataProvider: UITableViewDataSource {
         case .done: task = taskManager.doneTask(at: indexPath.row)
         }
         
-        cell.configure(withTask: task)
+        cell.configure(withTask: task, done: task.isDone)
         return cell
     }
     

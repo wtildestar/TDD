@@ -85,13 +85,15 @@ class TaskManager {
     
     func checkTask(at index: Int) {
         // _ тк remove возвращает элемент
-        let task = tasks.remove(at: index)
+        var task = tasks.remove(at: index)
+        task.isDone.toggle()
         doneTasks.append(task)
     }
     
     func uncheckTask(at index: Int) {
         // _ тк remove возвращает элемент
-        let task = doneTasks.remove(at: index)
+        var task = doneTasks.remove(at: index)
+        task.isDone.toggle()
         tasks.append(task)
     }
     
